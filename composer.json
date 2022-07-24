@@ -1,5 +1,5 @@
 {
-    "name": "dwi/pt-slm",
+    "name": "dwi/slm",
     "autoload": {
         "psr-4": {
             "app\\": "./"
@@ -7,8 +7,11 @@
     },
     "authors": [
         {
-            "name": "dwi susilo"
+            "name": "dwis312",
+            "email": "dwi31287@gmail.com"
         }
     ],
-    "require": {}
+    "require": {
+        "vlucas/phpdotenv": "^5.4"
+    }
 }

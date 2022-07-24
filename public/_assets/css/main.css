@@ -1,0 +1,226 @@
+/* Google font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+/* Variable css */
+:root
+{
+    --header-height: 3rem;
+    /* color */
+    /* change fav color */
+    --hue-color: 230; /* purple 250 - green 142 - blue 230 - pink 340 */
+    /* gradien color */
+    --gradien: linear-gradient( 109.6deg,  rgba(245,56,56,1) 11.2%, rgba(234,192,117,1) 78% );
+    --gradien2: linear-gradient( 109.6deg,  rgba(48,207,208,1) 11.2%, rgba(51,8,103,1) 92.5% );
+
+    /* HSL color mode */
+    --first-color: hsl(var(--hue-color), 69%, 61%);
+    --first-color-second: hsl(var(--hue-color), 69%, 61%);
+    --first-color-alt: hsl(var(--hue-color), 57%, 53%);
+    --first-color-ligther: hsl(var(--hue-color), 92%, 85%);
+    --title-color: hsl(var(--hue-color), 8%, 15%);
+    --text-color: hsl(var(--hue-color), 8%, 45%);
+    --text-color-light: hsl(var(--hue-color), 69%, 65%);
+    --input-color: hsl(var(--hue-color), 70%, 96%);
+    --body-color: hsl(var(--hue-color), 60%, 99%);
+    --container-color: #fff;
+    --scroll-bar-color: hsl(var(--hue-color), 12%, 90%);
+    --scroll-thumb-color: hsl(var(--hue-color), 12%, 80%);
+
+    /* Font and typography */
+    --body-font: 'Poppins', sans-serif;
+
+    /* .5rem = 8px, 1rem = 16px, 1.5rem = 24px ...*/
+    --big-font-size: 2rem;
+    --h1-font-size: 1.5rem;
+    --h2-font-size: 1.25rem;
+    --h3-font-size: 1.125rem;
+    --normal-font-size: .938rem;
+    --small-font-size: .813rem;
+    --smaller-font-size: .75rem;
+
+    /* Font Weight */
+    --font-medium: 500;
+    --font-semi-bold: 600;
+
+    /* Margin bottom */
+    /* .25rem = 4px, .5rem = 8px, .75rem = 12px ...*/
+    --mb-0-25: .25rem;
+    --mb-0-5: .5rem;
+    --mb-0-75: .75rem;
+    --mb-0-1: 1rem;
+    --mb-1-5: 1.5rem;
+    --mb-2: 2rem;
+    --mb-2-5: 2.5rem;
+    --mb-3: 3rem;
+
+    /* z index */
+    --z-tootip: 10;
+    --z-fixed: 100;
+    --z-modal: 1000;
+ 
+}
+
+/* Font size for large device */
+@media screen and (min-width: 968px)
+{
+    :root
+    {
+        --big-font-size: 3rem;
+        --h1-font-size: 2.25rem;
+        --h2-font-size: 1.5rem;
+        --h3-font-size: 1.25rem;
+        --normal-font-size: 1rem;
+        --small-font-size: .875rem;
+        --smaller-font-size: .813rem;
+    }
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--body-font);
+}
+
+header {
+    background-color: #eaeaea;
+    background-image: var(--gradien2);
+    background-size: 200%;
+    animation: gradient-animate 7s infinite alternate;
+}
+
+.brand {
+    font-weight: 600;
+    background-size: 200%;
+    background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(255,209,67,1) 0%, rgba(255,145,83,1) 90% );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    filter: drop-shadow(
+        0 0 1px rgba(255,255,255,.1)
+    );
+    animation: gradient-animate 7s infinite alternate;
+}
+
+@keyframes gradient-animate {
+    0% {
+        background-size: 100%;
+        filter: drop-shadow(0 0 2px rgba(255,255,255, .5));
+    }
+    
+    50% {
+        background-position: left;
+        filter: drop-shadow(0 0 2px rgba(255,255,255, .5));
+    }
+    
+    100% {
+        background-position: right;
+        color: #fff;
+    }
+}
+
+.hero {
+    position: relative;
+    display: flex;
+    height: max-content;
+}
+
+.hero img {
+    width: 100%;
+    height: 75vh;
+    object-fit: cover;
+    object-position: center;
+    /* opacity: .8; */
+}
+
+.hero .title {
+    width: 50%;
+    bottom: 50%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    position: absolute;
+}
+
+.hero .title h1 {
+    background-size: 200%;
+    background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(255,209,67,1) 0%, rgba(255,145,83,1) 90% );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: gradient-animate 10s infinite alternate;
+}
+
+.hero .title p {
+    text-align: start;
+    color: rgb(255, 255, 255);
+    text-shadow: 0 0 1px rgba(0, 0, 0, 0.305),
+                 0 0 4px rgba(0, 0, 0, 0.405),
+                 0 0 6px rgba(0, 0, 0, 0.405);
+}
+
+.card img {
+    height: 300px;
+    object-position: center;
+    object-fit: cover;
+}
+
+
+/* Scroll up */
+.scrollup
+{
+    position: fixed;
+    right: 1rem;
+    bottom: -20%;
+    background-color: var(--first-color);
+    opacity: .8;
+    padding: 0 .3rem;
+    border-radius: .4rem;
+    z-index: var(--z-tootip);
+    transition: .4s;
+}
+
+.scrollup
+{
+    position: fixed;
+    right: 1rem;
+    bottom: -20%;
+    background-color: var(--first-color);
+    opacity: .8;
+    padding: .3rem;
+    border-radius: .4rem;
+    z-index: var(--z-tootip);
+    transition: .4s;
+}
+
+.scrollup:hover
+{
+    background-color: var(--first-color-alt);
+}
+.scrollup__icon
+{
+    font-size: 1.5rem;
+    color: #fff;
+}
+/* Show scroll */
+.show-scroll
+{
+    bottom: 5rem;
+}
+
+/* Sroll bar */
+::-webkit-scrollbar
+{
+    width: .60rem;
+    background-color: var(--scroll-bar-color);
+    border-radius: .5rem;
+}
+::-webkit-scrollbar-thumb
+{
+    background-color: var(--scroll-thumb-color);
+    border-radius: .5rem;
+}
+::-webkit-scrollbar-thumb:hover
+{
+    background-color: var(--text-color-light);
+}
