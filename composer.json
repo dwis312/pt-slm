@@ -2,7 +2,7 @@
     "name": "dwi/pt-slm",
     "autoload": {
         "psr-4": {
-            "Dwi\\PtSlm\\": "src/"
+            "app\\": "./"
         }
     },
     "authors": [
